@@ -35,11 +35,13 @@ jobs:
         run: uv run make html --directory docs/
 
   cd:
+    permissions:
+      id-token: write  # Required for OIDC Trusted Publishing
+      contents: write  # Required for Python Semantic Release to push tags/releases
+
     needs: ci
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-      permissions:
-        id-token: write
 
     steps:
       - name: Checkout repository
