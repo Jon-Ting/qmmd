@@ -65,3 +65,11 @@ upload_to_release = true
 upload_to_pypi = false
 remove_dist = false
 patch_without_tag = true
+
+[tool.semantic_release.sphinx]
+configuration = "docs/conf.py"
+
+[tool.semantic_release.commit_parser_options]
+allowed_tags = ["feat", "fix", "docs", "style", "refactor", "perf", "test", "chore", "build", "ci", "perf"]
+minor_tags = ["feat"]
+patch_tags = ["fix", "perf"]
