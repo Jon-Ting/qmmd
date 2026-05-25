@@ -1,60 +1,67 @@
-[tool.poetry]
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
 name = "covdrugsim"
 version = "1.0.22"
 description = "Package to automate quantum mechanical calculations and molecular dynamics simulations of covalent drugs."
-authors = ["Jonathan Yik Chang Ting <jonting97@gmail.com>"]
-license = "MIT"
+authors = [
+    { name = "Jonathan Yik Chang Ting", email = "jonting97@gmail.com" }
+]
+license = { text = "MIT" }
 readme = "README.md"
-homepage = "https://github.com/Jon-Ting/covdrugsim"
-repository = "https://github.com/Jon-Ting/covdrugsim"
-documentation = "https://covdrugsim.readthedocs.io/en/latest/"
+requires-python = ">=3.10"
 keywords = ["covalent", "drug", "quantum", "mechanic", "molecular", "dynamics", "simulation"]
 classifiers = [
-    "Intended Audience :: Science/Research", 
-    "Natural Language :: English", 
-    "Operating System :: OS Independent", 
-    "Programming Language :: Python :: 3", 
-    "Topic :: Scientific/Engineering", 
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "matplotlib>=3.7.1",
+    "numpy>=1.25.0",
+    "pandas>=2.0.2",
+    "seaborn>=0.12.2",
+    "scipy>=1.10.0",
+    "xlsxwriter>=3.1.2",
+    "openpyxl>=3.1.2",
 ]
 
-[tool.poetry.scripts]
+[project.urls]
+Homepage = "https://github.com/Jon-Ting/covdrugsim"
+Repository = "https://github.com/Jon-Ting/covdrugsim"
+Documentation = "https://covdrugsim.readthedocs.io/en/latest/"
+
+[project.scripts]
 covdrugsim = "covdrugsim.main:main"
 
-[tool.poetry.dependencies]
-python = ">=3.10"
-matplotlib = ">=3.7.1"
-numpy = ">=1.25.0"
-pandas = ">=2.0.2"
-seaborn = ">=0.12.2"
-
-[tool.poetry.dev-dependencies]
-pytest = ">=7.4.0"
-pytest-cov = ">=4.1.0"
-jupyter = ">=1.0.0"
-myst-nb = {version = ">=0.17.2", python = ">=3.10"}
-sphinx-autoapi = ">=2.1.1"
-sphinx-rtd-theme = ">=1.2.2"
-python-semantic-release = ">=9.0.0"
-ruff = ">=0.1.0"
+[dependency-groups]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "jupyter>=1.0.0",
+    "myst-nb>=0.17.2",
+    "sphinx-autoapi>=2.1.1",
+    "sphinx-rtd-theme>=1.2.2",
+    "python-semantic-release>=9.0.0",
+    "ruff>=0.1.0",
+]
 
 [tool.ruff]
 line-length = 88
 target-version = "py310"
-select = ["E", "F", "W", "I"]
+lint.select = ["E", "F", "W", "I"]
 
 [tool.semantic_release]
-version_variable = [
-    "pyproject.toml:version",
-]                                           # version location
-branch = "main"                             # branch to make releases of
-changelog_file = "CHANGELOG.md"             # changelog file
-build_command = "poetry build"              # build dists
-dist_path = "dist/"                         # where to put dists
-upload_to_release = true                    # auto-create GitHub release
-upload_to_pypi = false                      # don't auto-upload to PyPI
-remove_dist = false                         # don't remove dists
-patch_without_tag = true                    # patch release by default
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+version_toml = ["pyproject.toml:project.version"]
+branch = "main"
+changelog_file = "CHANGELOG.md"
+build_command = "uv build"
+dist_path = "dist/"
+upload_to_release = true
+upload_to_pypi = false
+remove_dist = false
+patch_without_tag = true
