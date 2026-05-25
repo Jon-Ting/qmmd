@@ -1,22 +1,48 @@
+import os
 from os import listdir, mkdir, rename
 from os.path import isdir
 
 
-def rmExtension(fileName):
-    """Remove the extension of a file name."""
-    if '.' in fileName:
-        splitNames = fileName.split('.')
-        newFileName = ''.join(splitNames[:-1])
+def rmExtension(fileName: str) -> str:
+    """
+    Remove the extension of a file name.
+
+    Parameters
+    ----------
+    fileName : str
+        The name of the file.
+
+    Returns
+    -------
+    str
+        The file name without the extension.
+    """
+    if "." in fileName:
+        splitNames = fileName.split(".")
+        newFileName = "".join(splitNames[:-1])
     else:
         newFileName = fileName
     return newFileName
 
 
-def makeDirForXYZs(inpDirPath, verbose=False):
-    """Generate new directories with the same name as the existing xyz files"""
+def makeDirForXYZs(inpDirPath: str, verbose: bool = False) -> None:
+    """
+    Generate new directories with the same name as the existing xyz files.
+
+    Parameters
+    ----------
+    inpDirPath : str
+        The directory path containing the xyz files.
+    verbose : bool, optional
+        Whether to display details of the process.
+    """
     if verbose:
         print(f"  Making directories for molecules in {inpDirPath}...")
-    xyzFiles = [f for f in listdir(inpDirPath) if not isdir(f"{inpDirPath}/{f}") and '.xyz' in f]
+    xyzFiles = [
+        f
+        for f in listdir(inpDirPath)
+        if not isdir(f"{inpDirPath}/{f}") and ".xyz" in f
+    ]
     for xyzFile in xyzFiles:
         if verbose:
             print(f"    Making directory for {xyzFile}...")
@@ -27,8 +53,17 @@ def makeDirForXYZs(inpDirPath, verbose=False):
         print(f"  DONE -- Made all directories!\n")
 
 
-def groupFilesIntoDir(inpDirPath, verbose=False):
-    """Group files with same names (with extensions removed) into the same directories"""
+def groupFilesIntoDir(inpDirPath: str, verbose: bool = False) -> None:
+    """
+    Group files with same names (with extensions removed) into the same directories.
+
+    Parameters
+    ----------
+    inpDirPath : str
+        The directory path containing the files to be grouped.
+    verbose : bool, optional
+        Whether to display details of the process.
+    """
     if verbose:
         print(f"\nGrouping molecules in {inpDirPath} into individual directory...")
 
@@ -59,7 +94,5 @@ def groupFilesIntoDir(inpDirPath, verbose=False):
 
 if __name__ == "__main__":
     # Debugging
-    inpDirPath = '/mnt/c/Users/ASUS/Documents/covdrugsim/src/covdrugsim/data/exampleXYZs'
-    # makeDirForXYZs(inpDirPath, verbose=True)
+    inpDirPath = "/mnt/c/Users/ASUS/Documents/covdrugsim/src/covdrugsim/data/exampleXYZs"
     groupFilesIntoDir(inpDirPath, verbose=True)
-

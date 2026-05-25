@@ -1,4 +1,5 @@
 from math import log, exp
+from typing import Optional, Tuple
 
 # Eyring-Polanyi equation: k_off = (kappa*kB*T/h) * exp(-dGrevbarr/(R*T))
 kappa = 1  # Transmission coefficient, reflects fraction of flux through TSS proceeds to P without recrossing TSS
@@ -9,14 +10,14 @@ R = 8.314462618  # Ideal gas constant, equivalent to kB, but expressed in per mo
 cal2J = 4.184
 
 
-def energyUnitsConversion(E_kcal, E_kJ, verbose=False):
+def energyUnitsConversion(E_kcal: Optional[float], E_kJ: Optional[float], verbose: bool = False) -> Tuple[float, float]:
     """Convert between kcal and kJ.
 
     Parameters
     ----------
-    E_kcal : Union[float,bool]
+    E_kcal : float, optional
         Energy (kcal).
-    E_kJ : Union[float,bool]
+    E_kJ : float, optional
         Energy (kJ).
     verbose : bool
         Whether to display details.
@@ -30,27 +31,31 @@ def energyUnitsConversion(E_kcal, E_kJ, verbose=False):
 
     Examples
     --------
-    >>> energyUnitsConversion(100, False, True)
+    >>> energyUnitsConversion(100, None, True)
     """
-    if not(E_kcal):  # If no value is provided
+    if E_kcal is None:  # If no value is provided
+        if E_kJ is None:
+            raise ValueError("Both E_kcal & E_kJ are missing! Provide one.")
         E_kcal = E_kJ/cal2J
-    elif not(E_kJ):
+    elif E_kJ is None:
         E_kJ = E_kcal*cal2J
     else:
-        raise Exception("Both E_kcal & E_kJ are missing! Provide one.")
+        # Both provided, check consistency or prioritize? Legacy code raised error.
+        # But legacy code actually had a bug where if both provided it raised exception "missing".
+        raise ValueError("Both E_kcal & E_kJ provided! Provide only one.")
     if verbose:
         print("E_kcal =", E_kcal, "kcal/mol, E_kJ =", E_kJ, "kJ/mol")
     return E_kcal, E_kJ
 
 
-def eyringEquation(k, dGbarr, T, verbose=False):
+def eyringEquation(k: Optional[float], dGbarr: Optional[float], T: float, verbose: bool = False) -> Tuple[float, float]:
     """Calculate off rate or elimination barrier from each other at a specific temperature using Eyring-Polanyi equation.
 
     Parameters
     ----------
-    k : Union[float,bool]
+    k : float, optional
         Off rate (s^-1).
-    dGbarr : Union[float,bool]
+    dGbarr : float, optional
         Elimination barrier (kcal/mol).
     T : float
         Temperature (K)
@@ -66,34 +71,38 @@ def eyringEquation(k, dGbarr, T, verbose=False):
 
     Examples
     --------
-    >>> eyring(None, 4.5, 300, True)
+    >>> eyringEquation(None, 4.5, 300, True)
     """
-    if not(k):  # If no value is provided
-        print("\n--------------------------------------\n\n# Converting energy unit...")
-        E_kcal, dGbarr = E_unit_conv(dGbarr, None)  # Convert to kJ/mol [kcal/mol], [kJ/mol]
-        dGbarr *= 1000  # Convert to J/mol
-        k = (kappa*kB*T/h) * exp(-dGbarr/(R*T))  # Calculate off rate
-    elif not(dGbarr):
-        dGbarr = -R*T*log(h*k/(kappa*kB*T))
+    if k is None:  # If no value is provided
+        if dGbarr is None:
+            raise ValueError("Both k & dGbarr are missing! Provide one.")
+        if verbose:
+            print("\n--------------------------------------\n\n# Converting energy unit...")
+        _, dGbarr_kJ = energyUnitsConversion(dGbarr, None)  # Convert to kJ/mol
+        dGbarr_J = dGbarr_kJ * 1000  # Convert to J/mol
+        k = (kappa*kB*T/h) * exp(-dGbarr_J/(R*T))  # Calculate off rate
+    elif dGbarr is None:
+        dGbarr_J = -R*T*log(h*k/(kappa*kB*T))
+        dGbarr = dGbarr_J / (cal2J*1000)
     else:
-        raise Exception("Both k & dGbarr are missing! Provide one.")
-    dGbarr /= cal2J*1000  # Convert to kcal/mol
+        raise ValueError("Both k & dGbarr provided! Provide only one.")
+    
     if verbose:
         print("\n--------------------------------------\n\n# Using Eyring-Polanyi equation...")
         print("At T =", T, "K, k =", k, "s^-1, dGbarr =", dGbarr, "kcal/mol")
     return k, dGbarr
 
 
-def timeUnitsConversion(k, t_half, RT, verbose=False):
+def timeUnitsConversion(k: Optional[float], t_half: Optional[float], RT: Optional[float], verbose: bool = False) -> Tuple[float, float, float]:
     """Interconvert between off rate (s^-1), half life (s), and residence time (s).
 
     Parameters
     ----------
-    k : Union[float,bool]
+    k : float, optional
         Off rate (s^-1).
-    t_hald : Union[float,bool]
+    t_half : float, optional
         Half life (s).
-    RT : Union[float,bool]
+    RT : float, optional
         Residence time (s)
     verbose : bool
         Whether to display details.
@@ -102,23 +111,23 @@ def timeUnitsConversion(k, t_half, RT, verbose=False):
     -------
     k : float
         Off rate (s^-1).
-    t_hald : float
+    t_half : float
         Half life (s).
     RT : float
         Residence time (s).
 
     Examples
     --------
-    >>> exp_time(None, 30.8, None, True)
+    >>> timeUnitsConversion(None, 30.8, None, True)
     """
-    if k:  # If value is provided
+    if k is not None:  # If value is provided
         t_half, RT = log(2)/k, 1/k
-    elif t_half:
+    elif t_half is not None:
         k, RT = log(2)/t_half, t_half/log(2)
-    elif RT:
+    elif RT is not None:
         k, t_half = 1/RT, RT*log(2)
     else:
-        raise Exception("All parameters are missing! Provide one.")
+        raise ValueError("All parameters are missing! Provide one.")
     if verbose:
         print("\n--------------------------------------\n\n# Kinetic parameters conversion...")
         print("k =", k, "s^-1, t_half =", t_half, "s, RT =", RT, "s")
@@ -130,6 +139,6 @@ if __name__ == "__main__":
     k, dGbarr = None, 30.8  # off rate [s^-1], elimination barrier [kcal/mol]
     t_half, RT = None, None  # half_life [s], residence time [s]
 
-    k, dGbarr = eyring(k, dGbarr, T, True)
-    k, t_half, RT = exp_time(k, t_half, RT, True)
+    k, dGbarr = eyringEquation(k, dGbarr, T, True)
+    k, t_half, RT = timeUnitsConversion(k, t_half, RT, True)
 

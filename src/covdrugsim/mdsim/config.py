@@ -1,4 +1,4 @@
-MD_PATH = "/home/s4425412/data/Honours/MD"
+# MD_PATH = "/home/s4425412/data/Honours/MD"
 
 SINGLE_PLOT_WIDTH = 9
 SINGLE_PLOT_HEIGHT = 7
