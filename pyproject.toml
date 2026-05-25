@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "qmmd"
-version = "1.1.1"
+version = "1.1.2"
 description = "Python toolset to facilitate QM calculation and MD simulation of biomolecular systems involving both small molecules and large biomolecules."
 authors = [
     { name = "Jonathan Yik Chang Ting", email = "jonting97@gmail.com" }
@@ -39,6 +39,7 @@ Documentation = "https://qmmd.readthedocs.io/en/latest/"
 
 [project.scripts]
 qmmd = "qmmd.main:main"
+
 
 
 [dependency-groups]
