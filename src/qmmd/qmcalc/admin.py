@@ -94,5 +94,5 @@ def groupFilesIntoDir(inpDirPath: str, verbose: bool = False) -> None:
 
 if __name__ == "__main__":
     # Debugging
-    inpDirPath = "/mnt/c/Users/ASUS/Documents/covdrugsim/src/covdrugsim/data/exampleXYZs"
+    inpDirPath = "/mnt/c/Users/ASUS/Documents/qmmd/src/qmmd/data/exampleXYZs"
     groupFilesIntoDir(inpDirPath, verbose=True)

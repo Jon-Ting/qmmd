@@ -5,13 +5,13 @@ from shutil import rmtree
 import numpy as np
 from pytest import approx, fixture, mark
 
-from covdrugsim.datasets import genExampleXYZs, getExampleEnergyLevellerInputPath, getExampleChargePath
-from covdrugsim.qmcalc.constants import keywordDict
-from covdrugsim.qmcalc.genScripts import genAllScripts
-from covdrugsim.qmcalc.admin import groupFilesIntoDir
-from covdrugsim.qmcalc.tabulate import writeToExcel
-from covdrugsim.qmcalc.unitConv import energyUnitsConversion, eyringEquation, timeUnitsConversion
-from covdrugsim.mdsim import mdAnalyse
+from qmmd.datasets import genExampleXYZs, getExampleEnergyLevellerInputPath, getExampleChargePath
+from qmmd.qmcalc.constants import keywordDict
+from qmmd.qmcalc.genScripts import genAllScripts
+from qmmd.qmcalc.admin import groupFilesIntoDir
+from qmmd.qmcalc.tabulate import writeToExcel
+from qmmd.qmcalc.unitConv import energyUnitsConversion, eyringEquation, timeUnitsConversion
+from qmmd.mdsim import mdAnalyse
 
 targetDirPath = 'tests/exampleXYZs'
 exampleXYZname = 'example1'

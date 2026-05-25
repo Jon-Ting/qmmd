@@ -2,8 +2,8 @@ import os
 from os.path import isdir
 from typing import Optional, Union
 
-from covdrugsim.qmcalc.constants import keywordDict
-from covdrugsim.qmcalc.admin import groupFilesIntoDir
+from qmmd.qmcalc.constants import keywordDict
+from qmmd.qmcalc.admin import groupFilesIntoDir
 
 
 def writeGaussInpFile(
@@ -280,7 +280,7 @@ def genAllScripts(
 
 if __name__ == "__main__":
     # Test case
-    inpDirPath = "/mnt/c/Users/ASUS/Documents/covdrugsim/src/covdrugsim/data/exampleXYZs"
+    inpDirPath = "/mnt/c/Users/ASUS/Documents/qmmd/src/qmmd/data/exampleXYZs"
 
     keywordLine = (
         "# m062x/6-311+g(d,p) opt=calcfc freq scrf=(cpcm,solvent=water) int(grid=ultrafine)"

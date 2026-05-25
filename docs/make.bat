@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=covdrugsim
+set SPHINXPROJ=qmmd
 
 if "%1" == "" goto help
 

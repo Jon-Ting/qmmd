@@ -1,14 +1,14 @@
-# AGENTS.md — AI agent instructions for covdrugsim
+# AGENTS.md — AI agent instructions for qmmd
 
 Purpose: Help AI coding agents understand project layout, install/test commands, and conventions. Keep this file minimal and link to detailed docs where appropriate.
 
 ## Quick facts
 
 - **Python:** >=3.10 (see [pyproject.toml](pyproject.toml#L1-L10)).
-- **Source:** code lives under [src/covdrugsim](src/covdrugsim).
+- **Source:** code lives under [src/qmmd](src/qmmd).
 - **Tests:** unit tests in [tests/](tests) — run with `uv sync` then `uv run pytest -q` or `python -m pytest tests/`.
 - **Build/packaging:** Uses `hatchling` as the build backend (see [pyproject.toml](pyproject.toml#L1-L20)).
-- **Entry point:** `covdrugsim` script is defined in `pyproject.toml` -> `covdrugsim.main:main`.
+- **Entry point:** `qmmd` script is defined in `pyproject.toml` -> `qmmd.main:main`.
 
 ## Useful commands
 
@@ -51,7 +51,7 @@ make -C docs html
 - Project metadata and scripts: [pyproject.toml](pyproject.toml#L1-L120)
 - Contributor workflow: [CONTRIBUTING.md](CONTRIBUTING.md#L1-L200)
 - Documentation and examples: [docs/](docs) and [docs/example.ipynb](docs/example.ipynb)
-- Source code entry: [src/covdrugsim/main.py](src/covdrugsim/main.py)
+- Source code entry: [src/qmmd/main.py](src/qmmd/main.py)
 
 ---
 

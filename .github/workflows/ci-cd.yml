@@ -22,7 +22,7 @@ jobs:
         run: uv sync --all-extras --dev
 
       - name: Test with pytest
-        run: uv run pytest tests/ --cov=covdrugsim --cov-report=xml
+        run: uv run pytest tests/ --cov=qmmd --cov-report=xml
 
       - name: Use Codecov to track coverage
         uses: codecov/codecov-action@v3
@@ -77,7 +77,7 @@ jobs:
             uv pip install \
             --index-url https://test.pypi.org/simple/ \
             --extra-index-url https://pypi.org/simple \
-            covdrugsim
+            qmmd
 
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1

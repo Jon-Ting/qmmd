@@ -12,7 +12,7 @@ def getExampleChargePath():
     str
         Path to file.
     """
-    return str(files('covdrugsim.data').joinpath('chargesExample.txt'))
+    return str(files('qmmd.data').joinpath('chargesExample.txt'))
 
 
 def getExampleEnergyLevellerInputPath():
@@ -23,7 +23,7 @@ def getExampleEnergyLevellerInputPath():
     str
         Path to file.
     """
-    return str(files('covdrugsim.data').joinpath('energyLevellerExample.inp'))
+    return str(files('qmmd.data').joinpath('energyLevellerExample.inp'))
 
 
 def genExampleXYZs(targetDirPath):
@@ -32,6 +32,6 @@ def genExampleXYZs(targetDirPath):
     """
     if not isdir(targetDirPath):
         mkdir(targetDirPath)
-    exampleXYZsPath = str(files('covdrugsim.data').joinpath('exampleXYZs'))
+    exampleXYZsPath = str(files('qmmd.data').joinpath('exampleXYZs'))
     copytree(exampleXYZsPath, targetDirPath, dirs_exist_ok=True)
 

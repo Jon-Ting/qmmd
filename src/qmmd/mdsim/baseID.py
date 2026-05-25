@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
-from covdrugsim.mdsim import config
+from qmmd.mdsim import config
 
 sns.set(context="talk", font_scale=0.8)
 

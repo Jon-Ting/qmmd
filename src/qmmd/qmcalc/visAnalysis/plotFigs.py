@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
-from covdrugsim.qmcalc.visAnalysis.plotConfig import (
+from qmmd.qmcalc.visAnalysis.plotConfig import (
     barrier_data,
     benchmarking_data,
     charge_list,

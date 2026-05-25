@@ -6,7 +6,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u"covdrugsim"
+project = u"qmmd"
 copyright = u"2023, Jonathan Yik Chang Ting"
 author = u"Jonathan Yik Chang Ting"
 

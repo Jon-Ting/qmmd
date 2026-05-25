@@ -221,5 +221,5 @@ def writeToExcel(inputDirPath: str, verbose: bool = False) -> Workbook:
 
 
 if __name__ == "__main__":
-    inputDirPath = "/mnt/c/Users/ASUS/Documents/covdrugsim/src/covdrugsim/data/exampleXYZs"  # To be modified!
+    inputDirPath = "/mnt/c/Users/ASUS/Documents/qmmd/src/qmmd/data/exampleXYZs"  # To be modified!
     workbook = writeToExcel(inputDirPath, verbose=True)

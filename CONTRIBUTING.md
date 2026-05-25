@@ -40,13 +40,13 @@ If you are proposing a feature:
 
 ## Get Started!
 
-Ready to contribute? Here's how to set up `covdrugsim` for local development.
+Ready to contribute? Here's how to set up `qmmd` for local development.
 
-1. Download a copy of `covdrugsim` locally.
-2. Install `covdrugsim` using `poetry`:
+1. Download a copy of `qmmd` locally.
+2. Install `qmmd` using `uv`:
 
     ```console
-    $ poetry install
+    $ uv sync
     ```
 
 3. Use `git` (or similar) to create a branch for local development and make your changes:
@@ -69,5 +69,5 @@ Before you submit a pull request, check that it meets these guidelines:
 
 ## Code of Conduct
 
-Please note that the `covdrugsim` project is released with a
+Please note that the `qmmd` project is released with a
 Code of Conduct. By contributing to this project you agree to abide by its terms.

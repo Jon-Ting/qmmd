@@ -1,27 +1,27 @@
 """
-CovDrugSim Package
+QMMD Package
 ==================
 
 Documentation is available in two forms: docstrings provided with the code, 
 and a loose standing reference guide, available from 
-`the CovDrugSim homepage <https://covdrugsim.readthedocs.io/en/latest/>`_.
+`the QMMD homepage <https://qmmd.readthedocs.io/en/latest/>`_.
 """
 from importlib.metadata import version, PackageNotFoundError
 
 try:
-    __version__ = version('covdrugsim')
+    __version__ = version('qmmd')
 except PackageNotFoundError:
     __version__ = "unknown"
 
 __all__ = ['mdsim', 'qmcalc', 'datasets', 'test']
 
-from covdrugsim import mdsim
-from covdrugsim import qmcalc
-from covdrugsim import datasets
+from qmmd import mdsim
+from qmmd import qmcalc
+from qmmd import datasets
 
 
 def test():
-    """Run tests for the covdrugsim package."""
+    """Run tests for the qmmd package."""
     import pytest
     import os
     package_path = os.path.dirname(__file__)

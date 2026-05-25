@@ -3,7 +3,7 @@ import shutil
 from os.path import exists
 
 import pandas as pd
-from covdrugsim.qmcalc.tabulate import writeToExcel
+from qmmd.qmcalc.tabulate import writeToExcel
 
 
 def test_writeToExcel(tmp_path):

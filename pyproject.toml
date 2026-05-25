@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "covdrugsim"
+name = "qmmd"
 version = "1.0.22"
-description = "Package to automate quantum mechanical calculations and molecular dynamics simulations of covalent drugs."
+description = "Python toolset to facilitate QM calculation and MD simulation of biomolecular systems involving both small molecules and large biomolecules."
 authors = [
     { name = "Jonathan Yik Chang Ting", email = "jonting97@gmail.com" }
 ]
@@ -31,12 +31,12 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Jon-Ting/covdrugsim"
-Repository = "https://github.com/Jon-Ting/covdrugsim"
-Documentation = "https://covdrugsim.readthedocs.io/en/latest/"
+Homepage = "https://github.com/Jon-Ting/qmmd"
+Repository = "https://github.com/Jon-Ting/qmmd"
+Documentation = "https://qmmd.readthedocs.io/en/latest/"
 
 [project.scripts]
-covdrugsim = "covdrugsim.main:main"
+qmmd = "qmmd.main:main"
 
 [dependency-groups]
 dev = [

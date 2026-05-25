@@ -1,14 +1,14 @@
 import argparse
 import sys
-from covdrugsim.datasets import genExampleXYZs
-from covdrugsim.qmcalc.genScripts import genAllScripts
-from covdrugsim.qmcalc.tabulate import writeToExcel
-from covdrugsim.qmcalc.unitConv import energyUnitsConversion, eyringEquation, timeUnitsConversion
-from covdrugsim.qmcalc.jobSubmit import submit_jobs
+from qmmd.datasets import genExampleXYZs
+from qmmd.qmcalc.genScripts import genAllScripts
+from qmmd.qmcalc.tabulate import writeToExcel
+from qmmd.qmcalc.unitConv import energyUnitsConversion, eyringEquation, timeUnitsConversion
+from qmmd.qmcalc.jobSubmit import submit_jobs
 
 
 def main():
-    parser = argparse.ArgumentParser(description="CovDrugSim: Automate QM and MD for covalent drugs.")
+    parser = argparse.ArgumentParser(description="QMMD: Automate QM and MD for covalent drugs.")
     subparsers = parser.add_subparsers(dest="command", help="Sub-command to run")
 
     # init-struct (example XYZ generation)

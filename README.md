@@ -1,10 +1,10 @@
-# CovDrugSim
+# QMMD
 
-[![ci-cd](https://github.com/Jon-Ting/covdrugsim/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Jon-Ting/covdrugsim/actions/workflows/ci-cd.yml)
+[![ci-cd](https://github.com/Jon-Ting/qmmd/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Jon-Ting/qmmd/actions/workflows/ci-cd.yml)
 
 ## Description
 
-`CovDrugSim` is a package that provides functionalities to automate quantum mechanical calculations and molecular dynamics simulations of covalent drugs.
+`QMMD` is a package that provides functionalities to automate quantum mechanical calculations and molecular dynamics simulations of covalent drugs.
 
 ## Features
 
@@ -17,26 +17,26 @@
 
 ## Installation
 
-Use `pip` or `conda` to install `CovDrugSim`:
+Use `pip` or `conda` to install `qmmd`:
 
 ```bash
-$ pip install covdrugsim
+$ pip install qmmd
 ```
 ```bash
-$ conda install -c conda-forge covdrugsim
+$ conda install -c conda-forge qmmd
 ```
 
 ## Usage
 
-`covdrugsim` can be used to conduct quantum mechanical calculations and molecular dynamics simulations as follows:
+`qmmd` can be used to conduct quantum mechanical calculations and molecular dynamics simulations as follows:
 
 ```python
-from covdrugsim.qmCalc.genScript import genAllScripts
+from qmmd.qmCalc.genScript import genAllScripts
 
 targetDirPath = '/mnt/c/Users/JonTing/exampleXYZs'  # Absolute path to the directories containing all of your xyz files to be run
 genAllScripts(targetDirPath, verbose=True)
 ```
-Check out the [notebook tutorial](https://github.com/Jon-Ting/covdrugsim/blob/main/docs/example.ipynb) for further explanations and demonstrations!
+Check out the [notebook tutorial](https://github.com/Jon-Ting/qmmd/blob/main/docs/example.ipynb) for further explanations and demonstrations!
 
 Descriptions of source codes:
 ### Quantum Mechanical Calculations (qmcalc)
@@ -79,19 +79,19 @@ plotFigs.py - Plots figures for QM data analysis.
 
 ## Documentation
 
-Detailed documentation and usage examples are hosted by [Read the Docs](https://covdrugsim.readthedocs.io/en/latest/).
+Detailed documentation and usage examples are hosted by [Read the Docs](https://qmmd.readthedocs.io/en/latest/).
 
 ## Contributing
 
-`CovDrugSim` appreciates your enthusiasm and welcomes your expertise! 
+`QMMD` appreciates your enthusiasm and welcomes your expertise! 
 
-Please check out the [contributing guidelines](https://github.com/Jon-Ting/covdrugsim/blob/main/CONTRIBUTING.md) and 
-[code of conduct](https://github.com/Jon-Ting/covdrugsim/blob/main/CONDUCT.md). 
+Please check out the [contributing guidelines](https://github.com/Jon-Ting/qmmd/blob/main/CONTRIBUTING.md) and 
+[code of conduct](https://github.com/Jon-Ting/qmmd/blob/main/CONDUCT.md). 
 By contributing to this project, you agree to abide by its terms.
 
 ## License
 
-The project is distributed under an [MIT License](https://github.com/Jon-Ting/covdrugsim/blob/main/LICENSE).
+The project is distributed under an [MIT License](https://github.com/Jon-Ting/qmmd/blob/main/LICENSE).
 
 ## Credits
 
