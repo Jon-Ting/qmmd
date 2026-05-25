@@ -76,6 +76,11 @@ jobs:
         if: steps.release.outputs.released == 'true'
         uses: pypa/gh-action-pypi-publish@release/v1
 
+      # Wipe the generated attestations so the next step can generate its own fresh pair
+      - name: Clean up TestPyPI Attestations
+        if: steps.release.outputs.released == 'true'
+        run: rm -f dist/*.attestation
+
       - name: Publish to PyPI
         if: steps.release.outputs.released == 'true'
         uses: pypa/gh-action-pypi-publish@release/v1
