@@ -67,6 +67,14 @@ jobs:
           password: ${{ secrets.TEST_PYPI_API_TOKEN }}
           repository_url: https://test.pypi.org/legacy/
 
+      - name: Test install from TestPyPI
+        if: steps.release.outputs.released == 'true'
+        run: |
+            uv pip install \
+            --index-url https://test.pypi.org/simple/ \
+            --extra-index-url https://pypi.org/simple \
+            qmmd
+
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
