@@ -12,13 +12,15 @@ authors = [
 license = { text = "MIT" }
 readme = "README.md"
 requires-python = ">=3.10"
-keywords = ["covalent", "drug", "quantum", "mechanic", "molecular", "dynamics", "simulation"]
+keywords = ["quantum", "mechanic", "molecular", "dynamics", "simulation"]
 classifiers = [
     "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Physics",
 ]
 dependencies = [
     "matplotlib>=3.7.1",
@@ -59,17 +61,9 @@ lint.select = ["E", "F", "W", "I"]
 version_toml = ["pyproject.toml:project.version"]
 branch = "main"
 changelog_file = "CHANGELOG.md"
-build_command = "uv build"
+build_command = "pip install build && python -m build"
 dist_path = "dist/"
 upload_to_release = true
-upload_to_pypi = false
+upload_to_pypi = true
 remove_dist = false
 patch_without_tag = true
-
-[tool.semantic_release.sphinx]
-configuration = "docs/conf.py"
-
-[tool.semantic_release.commit_parser_options]
-allowed_tags = ["feat", "fix", "docs", "style", "refactor", "perf", "test", "chore", "build", "ci", "perf"]
-minor_tags = ["feat"]
-patch_tags = ["fix", "perf"]
