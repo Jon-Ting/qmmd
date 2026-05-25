@@ -1,7 +1,15 @@
 # CHANGELOG
 
 
+## v1.2.0 (2026-05-25)
+
+
 ## v1.1.4 (2026-05-25)
+
+### Features
+
+- Add Dependabot auto-merge workflow
+  ([`1a75c9c`](https://github.com/Jon-Ting/qmmd/commit/1a75c9ce162f45f00fb396b9f253906a4c80acd6))
 
 
 ## v1.1.3 (2026-05-25)
