@@ -1,12 +1,18 @@
 # CHANGELOG
 
 
+## v1.2.4 (2026-05-25)
+
+
 ## v1.2.3 (2026-05-25)
 
 ### Bug Fixes
 
 - Fix syntax error in ci-cd.yml
   ([`2fd6ba8`](https://github.com/Jon-Ting/qmmd/commit/2fd6ba86701b34b6f438cbdcae938c136cfb8ddd))
+
+- Specify environment for testpypi and pypi
+  ([`254725c`](https://github.com/Jon-Ting/qmmd/commit/254725c2fd28b0ce62bec2d37b0e090bc8e2fcf8))
 
 ### Build System
 
