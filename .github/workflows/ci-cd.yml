@@ -69,7 +69,7 @@ jobs:
       - name: Build distribution
         if: steps.release.outputs.released == 'true'
         run: |
-          rm -rf dist/
+          sudo rm -rf dist/
           uv build
 
       - name: Publish to TestPyPI
