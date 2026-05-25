@@ -1,12 +1,21 @@
 # CHANGELOG
 
 
+## v1.1.3 (2026-05-25)
+
+
 ## v1.1.2 (2026-05-25)
 
 ### Bug Fixes
 
 - Add requirements for Sphinx
   ([`d62c07f`](https://github.com/Jon-Ting/qmmd/commit/d62c07ff64456312e62cd23d13f445c370b7f1ee))
+
+- Correct import path for genExampleXYZs in example notebook
+  ([`9e3b20b`](https://github.com/Jon-Ting/qmmd/commit/9e3b20bef749d21ea021225f9c4f9c08347e21d1))
+
+- Ensure clean build directory before distribution
+  ([`4dba26f`](https://github.com/Jon-Ting/qmmd/commit/4dba26f7f15590c8d68c48ee5139ea030947f619))
 
 
 ## v1.1.1 (2026-05-26)
