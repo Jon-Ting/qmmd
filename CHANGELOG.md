@@ -1,7 +1,15 @@
 # CHANGELOG
 
 
+## v1.2.1 (2026-05-25)
+
+
 ## v1.2.0 (2026-05-25)
+
+### Performance Improvements
+
+- Reduce redundancy in ci-cd.yml
+  ([`30a433b`](https://github.com/Jon-Ting/qmmd/commit/30a433bc26f587f07745d15cf77d7cc442cde8db))
 
 
 ## v1.1.4 (2026-05-25)
