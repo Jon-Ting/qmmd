@@ -16,10 +16,12 @@ classifiers = [
     "Programming Language :: Python :: 3", 
     "Topic :: Scientific/Engineering", 
 ]
-include = ["tests/*", "setup.py"]
+
+[tool.poetry.scripts]
+covdrugsim = "covdrugsim.main:main"
 
 [tool.poetry.dependencies]
-python = ">=3.9"
+python = ">=3.10"
 matplotlib = ">=3.7.1"
 numpy = ">=1.25.0"
 pandas = ">=2.0.2"
@@ -29,14 +31,19 @@ seaborn = ">=0.12.2"
 pytest = ">=7.4.0"
 pytest-cov = ">=4.1.0"
 jupyter = ">=1.0.0"
-myst-nb = {version = ">=0.17.2", python = "^3.9"}
+myst-nb = {version = ">=0.17.2", python = ">=3.10"}
 sphinx-autoapi = ">=2.1.1"
 sphinx-rtd-theme = ">=1.2.2"
-python-semantic-release = ">=7.34.6"
+python-semantic-release = ">=9.0.0"
+ruff = ">=0.1.0"
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+select = ["E", "F", "W", "I"]
 
 [tool.semantic_release]
 version_variable = [
-    "setup.py:__version__",
     "pyproject.toml:version",
 ]                                           # version location
 branch = "main"                             # branch to make releases of
