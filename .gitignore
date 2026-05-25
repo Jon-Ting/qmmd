@@ -140,3 +140,10 @@ dmypy.json
 
 # MacOS
 .DS_Store
+
+# AI Assistants
+.agents/
+.antigravitycli/
+.codex
+.continue/
+.qodo/
