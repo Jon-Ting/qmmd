@@ -1,12 +1,35 @@
 # CHANGELOG
 
 
+## v1.2.3 (2026-05-25)
+
+### Bug Fixes
+
+- Fix syntax error in ci-cd.yml
+  ([`2fd6ba8`](https://github.com/Jon-Ting/qmmd/commit/2fd6ba86701b34b6f438cbdcae938c136cfb8ddd))
+
+### Build System
+
+- Switch to trust publisher
+  ([`48012a2`](https://github.com/Jon-Ting/qmmd/commit/48012a2906c8ba53cb3735f3c85cf43e52925dda))
+
+### Chores
+
+- Upgrade actions versions
+  ([`20396b9`](https://github.com/Jon-Ting/qmmd/commit/20396b9b0b48e9abe71901dd7010f9a7b3c655e8))
+
+
 ## v1.2.2 (2026-05-25)
 
 ### Bug Fixes
 
 - Remove dist directory before building
   ([`06d8871`](https://github.com/Jon-Ting/qmmd/commit/06d8871c3831f671bcb9e2620d512f32b15d6ae1))
+
+### Chores
+
+- Update argument to address deprecation warning in ci-cd.yml
+  ([`4e69230`](https://github.com/Jon-Ting/qmmd/commit/4e69230a3b3b1a64ff8b61ab7bff0d4114b6d379))
 
 
 ## v1.2.1 (2026-05-25)
