@@ -1,6 +1,9 @@
 name: ci-cd
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -41,6 +44,7 @@ jobs:
     needs: ci
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+
     steps:
       - name: Check-out repository
         uses: actions/checkout@v4
@@ -57,9 +61,6 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
-      - name: Install uv in the runner environment
-        run: pip install uv
-
       - name: Use Python Semantic Release to prepare release
         id: release
         uses: python-semantic-release/python-semantic-release@v9.16.0
@@ -68,9 +69,7 @@ jobs:
 
       - name: Build distribution
         if: steps.release.outputs.released == 'true'
-        run: |
-          sudo rm -rf dist/
-          uv build
+        run: uv build
 
       - name: Publish to TestPyPI
         if: steps.release.outputs.released == 'true'
