@@ -35,13 +35,11 @@ jobs:
         run: uv run make html --directory docs/
 
   cd:
-    permissions:
-      id-token: write
-      contents: write
-
     needs: ci
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+      permissions:
+        id-token: write
 
     steps:
       - name: Checkout repository
@@ -74,14 +72,7 @@ jobs:
       - name: Publish to TestPyPI
         if: steps.release.outputs.released == 'true'
         uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          user: __token__
-          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
-          repository-url: https://test.pypi.org/legacy/
 
       - name: Publish to PyPI
         if: steps.release.outputs.released == 'true'
         uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          user: __token__
-          password: ${{ secrets.PYPI_API_TOKEN }}
