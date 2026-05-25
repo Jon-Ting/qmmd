@@ -1,7 +1,15 @@
 # CHANGELOG
 
 
+## v1.2.5 (2026-05-25)
+
+
 ## v1.2.4 (2026-05-25)
+
+### Bug Fixes
+
+- Remove generated attestations to circumvent errors in uploading to pypi
+  ([`183e9e1`](https://github.com/Jon-Ting/qmmd/commit/183e9e155d2d1c7b5c4157dc39bf7013442e9ccb))
 
 
 ## v1.2.3 (2026-05-25)
