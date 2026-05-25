@@ -1,6 +1,22 @@
 # CHANGELOG
 
 
+## v1.1.2 (2026-05-25)
+
+### Bug Fixes
+
+- Add requirements for Sphinx
+  ([`d62c07f`](https://github.com/Jon-Ting/qmmd/commit/d62c07ff64456312e62cd23d13f445c370b7f1ee))
+
+
+## v1.1.1 (2026-05-26)
+
+### Chores
+
+- Manual version bump to 1.1.1 for testing
+  ([`49a43ab`](https://github.com/Jon-Ting/qmmd/commit/49a43ab6f1ada6ce2b216aa4309dd91171e310e1))
+
+
 ## v1.1.0 (2026-05-25)
 
 ### Build System
@@ -28,6 +44,9 @@
 
 - Update project metadata and CI configuration for improved package management
   ([`05f0fa5`](https://github.com/Jon-Ting/qmmd/commit/05f0fa546c7fa8d747f0774d7cf029edc237dbef))
+
+- Update Read the Docs configuration for Python and OS versions
+  ([`7f0a41d`](https://github.com/Jon-Ting/qmmd/commit/7f0a41d3a4d9ce1cd0cee96d0554cdf7908bc08c))
 
 - **deps-dev**: Bump gitpython from 3.1.41 to 3.1.50
   ([`a9ac96b`](https://github.com/Jon-Ting/qmmd/commit/a9ac96b5cfec3fae9819e76b93aff17006592ad9))
