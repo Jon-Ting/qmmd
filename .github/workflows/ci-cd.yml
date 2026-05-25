@@ -35,6 +35,7 @@ jobs:
         run: uv run make html --directory docs/
 
   cd:
+    environment: pypi
     permissions:
       id-token: write  # Required for OIDC Trusted Publishing
       contents: write  # Required for Python Semantic Release to push tags/releases
