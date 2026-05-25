@@ -96,11 +96,10 @@ The project is distributed under an [MIT License](https://github.com/Jon-Ting/qm
 ## Credits
 
 The package was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) using the 
-The codes were written by [Jonathan Yik Chang Ting](https://github.com/Jon-Ting) for [University of Queensland Bachelors of Advanced Science (Honours)](https://study.uq.edu.au/study-options/programs/bachelor-advanced-science-honours-2516) [CHEM6511](https://my.uq.edu.au/programs-courses/course.html?course_code=CHEM6511) under the title "[Molecular Modelling of Reversible Covalent Inhibition of Bruton’s Tyrosine Kinase by Cyanoacrylamides](https://github.com/Jon-Ting/Molecular-Modelling-of-Reversible-Covalent-Inhibition-of-Brutons-Tyrosine-Kinase-by-Cyanoacrylamide)". Click on the title to see the details of the project.
+The codes were written by [Jonathan Yik Chang Ting](https://github.com/Jon-Ting) for the project "[Molecular Modelling of Reversible Covalent Inhibition of Bruton’s Tyrosine Kinase by Cyanoacrylamides](https://github.com/Jon-Ting/Molecular-Modelling-of-Reversible-Covalent-Inhibition-of-Brutons-Tyrosine-Kinase-by-Cyanoacrylamide)".
 
 ## Contact
 
-Email: `Jonathan.Ting@anu.edu.au`/`jonting97@gmail.com`
+Email: `jonting97@gmail.com`
 
 Feel free to reach out if you have any questions, suggestions, or feedback.
-
