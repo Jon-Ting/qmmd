@@ -1,7 +1,20 @@
 # CHANGELOG
 
 
+## v1.2.2 (2026-05-25)
+
+### Bug Fixes
+
+- Remove dist directory before building
+  ([`06d8871`](https://github.com/Jon-Ting/qmmd/commit/06d8871c3831f671bcb9e2620d512f32b15d6ae1))
+
+
 ## v1.2.1 (2026-05-25)
+
+### Refactoring
+
+- Refine comments in ci-cd.yml for consistency across projects
+  ([`b4cf93f`](https://github.com/Jon-Ting/qmmd/commit/b4cf93f305212435109981cf530e311db94d5310))
 
 
 ## v1.2.0 (2026-05-25)
