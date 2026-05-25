@@ -1,7 +1,15 @@
 # CHANGELOG
 
 
+## v1.1.4 (2026-05-25)
+
+
 ## v1.1.3 (2026-05-25)
+
+### Bug Fixes
+
+- Use sudo to remove distribution directory before building
+  ([`853dbc8`](https://github.com/Jon-Ting/qmmd/commit/853dbc86851109a8cd33d80822c5d9a998412f47))
 
 
 ## v1.1.2 (2026-05-25)
