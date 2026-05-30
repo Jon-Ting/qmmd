@@ -17,13 +17,10 @@
 
 ## Installation
 
-Use `pip` or `conda` to install `qmmd`:
+Use `pip` to install `qmmd`:
 
 ```bash
 $ pip install qmmd
-```
-```bash
-$ conda install -c conda-forge qmmd
 ```
 
 ## Usage
